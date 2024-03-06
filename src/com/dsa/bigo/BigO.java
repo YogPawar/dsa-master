@@ -57,7 +57,7 @@ public class BigO {
 
   /**
    * Remove no n-dominant  both loop so TC will be O(n*n + n); so here O(n) is non dominant against
-   * O(n2)
+   * O(n^2)
    */
   public void removeNonDominant(int n) {
     //TC for this for loop is O(n*n)
