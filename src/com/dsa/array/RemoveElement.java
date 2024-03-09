@@ -31,7 +31,7 @@ public class RemoveElement {
     }
     if (index < array.length) {
       for (int i = index; i < array.length; i++) {
-          array[i] = 0;
+        array[i] = 0;
       }
     }
     System.out.println(Arrays.toString(array));

@@ -6,7 +6,7 @@ public class BuyOrSaleShare {
     BuyOrSaleShare buyOrSaleShare = new BuyOrSaleShare();
     int[] shares = {7, 2, 5, 8, 9, 10, 15};
 
-    System.out.println(buyOrSaleShare.maxProfit(shares));
+    System.out.println(buyOrSaleShare.max(shares));
   }
 
   public int maxProfit(int[] sharePrices) {
@@ -18,6 +18,20 @@ public class BuyOrSaleShare {
         maxProfit = Math.max(maxProfit, currentProfit);
       } else {
         left = right;
+      }
+    }
+    return maxProfit;
+  }
+
+  public int max(int[] prices) {
+    int minPrice = Integer.MAX_VALUE;
+    int maxProfit = 0;
+
+    for (int price : prices) {
+      if (price < minPrice) {
+        minPrice = price;
+      } else if (price - minPrice > maxProfit) {
+        maxProfit = price - minPrice;
       }
     }
     return maxProfit;
