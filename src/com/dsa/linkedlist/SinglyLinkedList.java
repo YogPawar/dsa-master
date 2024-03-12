@@ -105,6 +105,7 @@ public class SinglyLinkedList {
 
   public void deleteAt(int index) {
     //if list is empty print no data present
+    Node temp = head;
     if (head == null) {
       System.out.println("List is empty nothing to delete...");
     } else if (index == 0) { //delete at index 0
@@ -116,7 +117,6 @@ public class SinglyLinkedList {
       }
     } else if (index >= size) { //delete last index
       //identify the second last element in list
-      Node temp = head;
       while (temp.next.next != null) {
         temp = temp.next;
       }
@@ -128,6 +128,14 @@ public class SinglyLinkedList {
         head = null;
         tail = null;
       }
+    } else { //delete from specify index
+      for (int i = 1; i < index; i++) {
+        temp = temp.next;
+      }
+      Node deleteNode = temp.next;
+      temp.next = deleteNode.next;
+      deleteNode.next = null;
+      size--;
     }
   }
 

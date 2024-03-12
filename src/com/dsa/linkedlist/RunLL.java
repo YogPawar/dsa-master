@@ -13,9 +13,9 @@ public class RunLL {
     singlyLinkedList.append(61);
     singlyLinkedList.append(81);
     System.out.println(singlyLinkedList.tail.value);
-    singlyLinkedList.deleteAt(6);
+    singlyLinkedList.deleteAt(1);
     System.out.println();
-    singlyLinkedList.printSecondLast();
+    singlyLinkedList.printList();
     System.out.println(singlyLinkedList.tail.value);
   }
 
