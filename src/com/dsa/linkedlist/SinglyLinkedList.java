@@ -1,8 +1,5 @@
 package com.dsa.linkedlist;
 
-
-import java.sql.SQLOutput;
-
 public class SinglyLinkedList {
 
   public Node head;
