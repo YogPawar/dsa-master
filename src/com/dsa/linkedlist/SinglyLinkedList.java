@@ -142,6 +142,15 @@ public class SinglyLinkedList {
     }
   }
 
+  /**
+   * TC : O(1) SC: (O1)
+   */
+  public void deleteList() {
+    head = null;
+    tail = null;
+    System.out.println("SingleLinkedList deleted successfully");
+  }
+
   public void printSecondLast() {
     Node temp = head;
     while (temp.next.next != null) {

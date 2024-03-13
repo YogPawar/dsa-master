@@ -18,8 +18,9 @@ public class RunLL {
     singlyLinkedList.deleteAt(0);
     singlyLinkedList.printList();
 
-    System.out.println("\n" + singlyLinkedList.size);
-    System.out.println(singlyLinkedList.tail.value);
+    singlyLinkedList.deleteList();
+    System.out.println();
+    singlyLinkedList.printList();
   }
 
 }
