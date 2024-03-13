@@ -103,6 +103,11 @@ public class SinglyLinkedList {
     return false;
   }
 
+  /**
+   * TC : O(N) SC : O(1)
+   *
+   * @param index
+   */
   public void deleteAt(int index) {
     //if list is empty print no data present
     Node temp = head;
