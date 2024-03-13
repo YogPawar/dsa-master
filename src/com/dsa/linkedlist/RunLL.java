@@ -13,9 +13,12 @@ public class RunLL {
     singlyLinkedList.append(61);
     singlyLinkedList.append(81);
     System.out.println(singlyLinkedList.tail.value);
-    singlyLinkedList.deleteAt(1);
-    System.out.println();
+
+    System.out.println(singlyLinkedList.size);
+    singlyLinkedList.deleteAt(0);
     singlyLinkedList.printList();
+
+    System.out.println("\n" + singlyLinkedList.size);
     System.out.println(singlyLinkedList.tail.value);
   }
 

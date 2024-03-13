@@ -132,9 +132,7 @@ public class SinglyLinkedList {
       for (int i = 1; i < index; i++) {
         temp = temp.next;
       }
-      Node deleteNode = temp.next;
-      temp.next = deleteNode.next;
-      deleteNode.next = null;
+      temp.next = temp.next.next;
       size--;
     }
   }
