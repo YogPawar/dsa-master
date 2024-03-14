@@ -2,6 +2,7 @@ package com.dsa.circularLinkedList;
 
 import java.awt.GraphicsConfigTemplate;
 import java.sql.SQLOutput;
+import org.w3c.dom.Node;
 
 public class CircularLinkedList {
 
@@ -82,10 +83,14 @@ public class CircularLinkedList {
 
   public void printWithoutSize() {
     Node temp = head;
-    if (head != null) {
+    if (temp != null) {
       do {
         System.out.print(temp.value + " ");
-        temp = temp.next;
+        if (temp.next != null) {
+          temp = temp.next;
+        } else {
+          break;
+        }
       } while (temp != head);
     }
   }
@@ -107,12 +112,75 @@ public class CircularLinkedList {
     return -1;
   }
 
-  class Node {
+  public Node deleteFirst() {
+    Node temp = head;
+    if (size == 1) {
+      head = null;
+      tail = null;
+      size--;
+      return temp;
+    } else {
+      head = head.next;
+      tail.next = head;
+      temp.next = null;
+      size--;
+    }
+    if (size
+        < 0) { //after removing the fist element if the size is become 0 it means there was no element in the list
+      head = null;
+      tail = null;
+    }
+    return temp;
+  }
+
+  public Node deleteLast() {
+    Node temp = tail;
+    if (size == 1) {
+      return deleteFirst();
+    } else {
+      //find the second last location
+      Node prev = head;
+      do {
+        prev = prev.next;
+      } while (prev.next.next != head);
+      tail.next = null;
+      tail = prev;
+      tail.next = head;
+      size--;
+      return temp;
+    }
+  }
+
+  public Node delete(int index) {
+
+    if (index > size && index < 0) {
+      System.out.println("Invalid Index ");
+      return null;
+    } else if (index == 1) {
+      return deleteFirst();
+    } else if (index == size) {
+      return deleteLast();
+    } else {
+      Node prev = head;
+      int searchIndex = 0;
+      while (index < searchIndex) {
+        prev = prev.next;
+        searchIndex++;
+      }
+      Node deleteNode = prev.next;
+      prev.next = deleteNode.next;
+      deleteNode.next = null;
+      size--;
+      return deleteNode;
+    }
+  }
+
+  public class Node {
 
     int value;
     Node next;
 
-    Node(int value) {
+    public Node(int value) {
       this.value = value;
     }
   }

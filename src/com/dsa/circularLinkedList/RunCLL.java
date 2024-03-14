@@ -1,5 +1,8 @@
 package com.dsa.circularLinkedList;
 
+import com.dsa.circularLinkedList.CircularLinkedList.Node;
+import javax.swing.SwingUtilities;
+
 public class RunCLL {
 
   public static void main(String[] args) {
@@ -7,15 +10,9 @@ public class RunCLL {
     circularLinkedList.append(15);
     circularLinkedList.append(34);
     circularLinkedList.append(67);
-    circularLinkedList.insertAt(456, 2);
-    System.out.println(circularLinkedList.head.value);
-    System.out.println(circularLinkedList.tail.value);
-    System.out.println();
-    circularLinkedList.printCircularList();
-    System.out.println();
+
+    System.out.println("\nDeleted : " + circularLinkedList.delete(2));
     circularLinkedList.printWithoutSize();
-    circularLinkedList.search(34);
-    circularLinkedList.search(4563);
 
   }
 
