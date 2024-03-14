@@ -1,8 +1,4 @@
-package com.dsa.circularLinkedList;
-
-import java.awt.GraphicsConfigTemplate;
-import java.sql.SQLOutput;
-import org.w3c.dom.Node;
+package com.dsa.circularlinkedlist;
 
 public class CircularLinkedList {
 

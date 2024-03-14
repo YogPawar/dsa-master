@@ -1,7 +1,4 @@
-package com.dsa.circularLinkedList;
-
-import com.dsa.circularLinkedList.CircularLinkedList.Node;
-import javax.swing.SwingUtilities;
+package com.dsa.circularlinkedlist;
 
 public class RunCLL {
 
