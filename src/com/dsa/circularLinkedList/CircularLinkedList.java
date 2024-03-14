@@ -175,6 +175,13 @@ public class CircularLinkedList {
     }
   }
 
+  public void deleteAll() {
+    head = null;
+    tail = null;
+    size = 0;
+
+  }
+
   public class Node {
 
     int value;

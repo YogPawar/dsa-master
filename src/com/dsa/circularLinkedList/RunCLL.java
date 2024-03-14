@@ -14,6 +14,10 @@ public class RunCLL {
     System.out.println("\nDeleted : " + circularLinkedList.delete(2));
     circularLinkedList.printWithoutSize();
 
+    circularLinkedList.deleteAll();
+
+    System.out.println(circularLinkedList.size);
+
   }
 
 }
