@@ -10,6 +10,7 @@ public class RunDLL {
     dubblyLinkedList.printList();
     System.out.println("Head -> " + dubblyLinkedList.head.data);
     System.out.println("Tail -> " + dubblyLinkedList.tail.data);
+    System.out.println(dubblyLinkedList.tail.prev.data);
   }
 
 }

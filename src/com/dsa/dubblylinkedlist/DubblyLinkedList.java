@@ -19,8 +19,10 @@ public class DubblyLinkedList {
       head = node;
       tail = node;
     } else {
-      node.next = head;
-      head = node;
+      Node temp = tail;
+      temp.next = node;
+      node.prev = temp;
+      tail = node;
     }
     size += 1;
   }
