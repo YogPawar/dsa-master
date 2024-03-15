@@ -35,6 +35,50 @@ public class DubblyLinkedList {
     }
   }
 
+  public void prepend(int value) {
+    Node node = new Node(value);
+    if (size == 0) {
+      head = node;
+      tail = node;
+    } else {
+      Node temp = head;
+      node.next = temp;
+      temp.prev = node;
+      head = node;
+    }
+    size++;
+  }
+
+  public void insert(int value, int index) {
+    if (index < 0 || index > size) {
+      System.out.println("Invalid Index");
+      return;
+    }
+    if (index == 0) {
+      prepend(value);
+    } else if (index == size) {
+      append(value);
+    } else {
+      Node newNode = new Node(value);
+      Node dummyNode = head;
+      int i = 0;
+      while (i != index - 1) {
+        dummyNode = dummyNode.next;
+        i++;
+      }
+      newNode.next = dummyNode.next;
+      dummyNode.next.prev = newNode;
+      dummyNode.next = newNode;
+      newNode.prev = dummyNode;
+      size++;
+    }
+  }
+
+  public Node delete(int value) {
+    //TODO : Implement the delete functionality
+   return null;
+  }
+
   public class Node {
 
     int data;

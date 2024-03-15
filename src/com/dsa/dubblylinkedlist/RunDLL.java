@@ -4,13 +4,17 @@ public class RunDLL {
 
   public static void main(String[] args) {
     DubblyLinkedList dubblyLinkedList = new DubblyLinkedList(4);
-    System.out.println("Head -> " + dubblyLinkedList.head.data);
-    System.out.println("Tail -> " + dubblyLinkedList.tail.data);
-    dubblyLinkedList.append(6);
+    dubblyLinkedList.append(10);
+    dubblyLinkedList.append(20);
+    dubblyLinkedList.append(30);
+    dubblyLinkedList.append(40);
+    dubblyLinkedList.prepend(2);
+    dubblyLinkedList.insert(33, 0);
+    dubblyLinkedList.insert(43, 7);
     dubblyLinkedList.printList();
-    System.out.println("Head -> " + dubblyLinkedList.head.data);
-    System.out.println("Tail -> " + dubblyLinkedList.tail.data);
-    System.out.println(dubblyLinkedList.tail.prev.data);
+    System.out.println("\nSize : " + dubblyLinkedList.size);
+
+
   }
 
 }
