@@ -13,10 +13,13 @@ public class RunDLL {
     dubblyLinkedList.prepend(2);
     dubblyLinkedList.insert(33, 0);
     dubblyLinkedList.insert(43, 7);
-    System.out.println();
+    dubblyLinkedList.search(33);
+    dubblyLinkedList.search(43);
+
+    dubblyLinkedList.insert(45, 6);
+    dubblyLinkedList.search(45);
+    dubblyLinkedList.delete(6);
     dubblyLinkedList.printInOrder();
-    System.out.println();
-    dubblyLinkedList.printInReverseOrder();
 
 
   }

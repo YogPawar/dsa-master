@@ -127,20 +127,40 @@ public class DubblyLinkedList {
     }
   }
 
-  public Node deleteKtheElement(int value) {
-    Node dummyNode = head;
-    if (dummyNode.data == value) {
-      return deleteFirst();
-    }
-    return null;
-  }
-
   public void printInReverseOrder() {
     Node dummyNode = tail;
     while (dummyNode != null) {
       System.out.print(dummyNode.data + " ");
       dummyNode = dummyNode.prev;
     }
+  }
+
+  public void deleteDLL() {
+    Node dummyNode = head;
+    for (int i = 0; i < size; i++) {
+      dummyNode.prev = null;
+      dummyNode = dummyNode.next;
+    }
+    head = null;
+    tail = null;
+    size = -1;
+    System.out.println("Delete DLL");
+  }
+
+
+  public int search(int value) {
+    Node dummyNode = head;
+    int index = 0;
+    while (dummyNode != null) {
+      if (dummyNode.data == value) {
+        System.out.println("Value : " + value + " found at -> " + index);
+        return index;
+      }
+      dummyNode = dummyNode.next;
+      index++;
+    }
+    System.out.println("Element not found");
+    return 0;
   }
 
   public class Node {
