@@ -27,7 +27,7 @@ public class DubblyLinkedList {
     size += 1;
   }
 
-  public void printList() {
+  public void printInOrder() {
     Node temp = head;
     while (temp != null) {
       System.out.print(temp.data + " ");
@@ -74,9 +74,73 @@ public class DubblyLinkedList {
     }
   }
 
-  public Node delete(int value) {
-    //TODO : Implement the delete functionality
-   return null;
+  public Node deleteFirst() {
+    Node dummyNode = head;
+    if (dummyNode != null) {
+      head = dummyNode.next;
+      head.prev = null;
+      dummyNode.next = null;
+      size--;
+    }
+    if (size < 0) {
+      head = null;
+      tail = null;
+    }
+    return dummyNode;
+  }
+
+  public Node deleteLast() {
+    Node dummyNode = tail;
+    if (dummyNode != null) {
+      tail = dummyNode.prev;
+      tail.next = null;
+      size--;
+    }
+    if (size < 0) {
+      tail = null;
+      head = null;
+    }
+    return dummyNode;
+  }
+
+  public Node delete(int index) {
+    Node dummyNode = head;
+    if (index < 0 || index > size) {
+      System.out.println("Invalid Index");
+      return null;
+    } else if (index == 0) {
+      return deleteFirst();
+    } else if (index == size) {
+      return deleteLast();
+    } else {
+      int track = 0;
+      while (track == index - 1) {
+        dummyNode = dummyNode.next;
+        track++;
+      }
+      Node deleteNode = dummyNode.next;
+      dummyNode.next = deleteNode.next;
+      deleteNode.next = null;
+      deleteNode.prev = null;
+      size--;
+      return deleteNode;
+    }
+  }
+
+  public Node deleteKtheElement(int value) {
+    Node dummyNode = head;
+    if (dummyNode.data == value) {
+      return deleteFirst();
+    }
+    return null;
+  }
+
+  public void printInReverseOrder() {
+    Node dummyNode = tail;
+    while (dummyNode != null) {
+      System.out.print(dummyNode.data + " ");
+      dummyNode = dummyNode.prev;
+    }
   }
 
   public class Node {

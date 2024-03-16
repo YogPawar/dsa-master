@@ -1,5 +1,7 @@
 package com.dsa.dubblylinkedlist;
 
+import java.sql.SQLOutput;
+
 public class RunDLL {
 
   public static void main(String[] args) {
@@ -11,8 +13,10 @@ public class RunDLL {
     dubblyLinkedList.prepend(2);
     dubblyLinkedList.insert(33, 0);
     dubblyLinkedList.insert(43, 7);
-    dubblyLinkedList.printList();
-    System.out.println("\nSize : " + dubblyLinkedList.size);
+    System.out.println();
+    dubblyLinkedList.printInOrder();
+    System.out.println();
+    dubblyLinkedList.printInReverseOrder();
 
 
   }
