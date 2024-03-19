@@ -17,7 +17,9 @@ public class Main {
     list.insert(6);
 
     list.traverse();
-    removeKthElementFromLast.remove(list, 2);
+    int k = removeKthElementFromLast.returnKth(list, 2).data;
+    System.out.println();
+    System.out.println(k);
     list.traverse();
 
   }

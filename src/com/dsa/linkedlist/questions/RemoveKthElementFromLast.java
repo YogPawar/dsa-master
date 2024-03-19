@@ -1,8 +1,6 @@
 package com.dsa.linkedlist.questions;
 
 import com.dsa.linkedlist.questions.LinkedList.Node;
-import java.awt.desktop.AppReopenedEvent;
-import javax.imageio.plugins.jpeg.JPEGImageReadParam;
 
 public class RemoveKthElementFromLast {
 
@@ -23,4 +21,22 @@ public class RemoveKthElementFromLast {
     list.size--;
   }
 
+  public Node returnKth(LinkedList list, int n) {
+    Node current = list.head;
+    Node ktheNode = list.head;
+
+    //move ktheNode to nth location
+    for (int i = 0; i < n; i++) {
+      if (ktheNode == null) {
+        return null;
+      }
+      ktheNode = ktheNode.next;
+    }
+    while (ktheNode != null) {
+      current = current.next;
+      ktheNode = ktheNode.next;
+    }
+    list.size--;
+    return current;
+  }
 }
