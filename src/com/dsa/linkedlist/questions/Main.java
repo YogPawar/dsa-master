@@ -8,37 +8,19 @@ public class Main {
   public static void main(String[] args) {
 
     LinkedList list = new LinkedList();
+    RemoveKthElementFromLast removeKthElementFromLast = new RemoveKthElementFromLast();
     list.create(1);
+    list.insert(2);
     list.insert(3);
-    list.insert(1);
-    list.insert(1);
+    list.insert(4);
+    list.insert(5);
     list.insert(6);
-    list.insert(2);
-    list.insert(2);
-    list.insert(6);
-    list.insert(6);
+
     list.traverse();
-    System.out.println();
-    removeDups(list);
+    removeKthElementFromLast.remove(list, 2);
     list.traverse();
 
   }
 
-  public static void removeDups(LinkedList list) {
-    Node current = list.head;
-    Node prev = null;
-
-    HashSet<Integer> set = new HashSet<>();
-    while (current != null) {
-      int data = current.data;
-      if (!set.add(data)) {
-        prev.next = current.next;
-        list.size--;
-      } else {
-        prev = current;
-      }
-      current = current.next;
-    }
-  }
 
 }
