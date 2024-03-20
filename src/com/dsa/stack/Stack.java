@@ -1,5 +1,7 @@
 package com.dsa.stack;
 
+import java.util.Arrays;
+
 public class Stack {
 
   int top = -1;
@@ -25,12 +27,23 @@ public class Stack {
       return -1;
     } else {
       int topElement = stack[top];
+      stack[top] = 0; //removed from the stack
       top--;
+      System.out.println("After pop :" + Arrays.toString(stack));
       return topElement;
     }
   }
 
+  public void deleteStack() {
+    stack = null;
+    System.out.println("The stack is successfully deleted.");
+  }
+
   public void printStack() {
+    if (stack == null) {
+      System.out.println("Stack is null. To create stack call Stack(int size) constructor.");
+      return;
+    }
     System.out.print("[ ");
     for (int i : stack) {
       System.out.print(i + " ");
