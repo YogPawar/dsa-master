@@ -11,6 +11,7 @@ public class Main {
     stack.push(25);
     System.out.println(stack.isEmpty());
     System.out.println(stack.pop());
+    System.out.println(stack.pop());
 
   }
 
