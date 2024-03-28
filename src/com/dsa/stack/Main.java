@@ -12,7 +12,6 @@ public class Main {
 
     System.out.println(threeInOne.peek(0));
     System.out.println(threeInOne.peek(1));
-    System.out.println(threeInOne.peek(2));
 
   }
 
