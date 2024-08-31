@@ -15,19 +15,29 @@ public class BTMain {
     binaryTree.insert("N9");
     System.out.println("Pre Order : ");
     binaryTree.preOrder(binaryTree.root);
-    System.out.println("In Order : ");
+    System.out.println("\nIn Order : ");
     binaryTree.inOrder(binaryTree.root);
-    System.out.println("Post Order");
+    System.out.println("\nPost Order");
     binaryTree.postOrder(binaryTree.root);
 
     System.out.println();
-    System.out.println("Delete operation : ");
     binaryTree.preOrder(binaryTree.root);
     System.out.println("\nDeepest Node : " + binaryTree.getDeepestNode().data);
     System.out.println();
     binaryTree.deleteDeepestNode();
-    System.out.println("After delete");
+    System.out.println("After delete Deepest Node is : " + binaryTree.getDeepestNode().data);
     binaryTree.preOrder(binaryTree.root);
+    System.out.println();
+    System.out.println("Delete give node N3");
+    binaryTree.delete("N3");
+    System.out.println("After delete Deepest Node is : " + binaryTree.getDeepestNode().data);
+    binaryTree.preOrder(binaryTree.root);
+
+    binaryTree.delete();
+    System.out.println("\nDeleted Entire binary Tree");
+    binaryTree.preOrder(binaryTree.root);
+
+
   }
 
 }

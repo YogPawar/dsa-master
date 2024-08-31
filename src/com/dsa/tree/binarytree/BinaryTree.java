@@ -2,6 +2,7 @@ package com.dsa.tree.binarytree;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import javax.naming.BinaryRefAddr;
 
 public class BinaryTree {
 
@@ -78,7 +79,6 @@ public class BinaryTree {
     newNode.data = data;
     if (root == null) {
       root = newNode;
-      System.out.println("Inserted at root.");
       return;
     }
     //traverse the tree and insert at correct location (level order traversal).
@@ -88,12 +88,9 @@ public class BinaryTree {
       BinaryTreeNode currentNode = queue.remove();
       if (currentNode.leftChild == null) {
         currentNode.leftChild = newNode;
-        System.out.println("Inserted at Left child.");
         break;
       } else if (currentNode.rightChild == null) {
         currentNode.rightChild = newNode;
-        System.out.println("Inserted at right child.");
-
         break;
       } else {
         queue.add(currentNode.leftChild);
@@ -102,6 +99,11 @@ public class BinaryTree {
     }
   }
 
+  /**
+   * Method to find the deepest node in the tree.
+   *
+   * @return
+   */
   public BinaryTreeNode getDeepestNode() {
     BinaryTreeNode deepestNode = null;
     Queue<BinaryTreeNode> queue = new LinkedList<>();
@@ -118,6 +120,9 @@ public class BinaryTree {
     return deepestNode;
   }
 
+  /**
+   * Find and Delete Deepest Node from the tree
+   */
   public void deleteDeepestNode() {
     Queue<BinaryTreeNode> queue = new LinkedList<>();
     queue.add(root);
@@ -137,6 +142,41 @@ public class BinaryTree {
         queue.add(presentNode.leftChild);
         queue.add(presentNode.rightChild);
       }
+    }
+  }
+
+  /**
+   * delete given data from the tree <P>
+   * </P> method is depended on deleteDeepestNode()
+   */
+  public void delete(String value) {
+    Queue<BinaryTreeNode> queue = new LinkedList<>();
+    queue.add(root);
+    while (!queue.isEmpty()) {
+      BinaryTreeNode presentNode = queue.remove();
+      //check if the value matches with present node
+      if (presentNode.data == value) {
+        //assign this value to deepest node and delete the node
+        presentNode.data = getDeepestNode().data;
+        //delete deepest node
+        deleteDeepestNode();
+      } else {
+        //add the left and right child into queue.
+        if (presentNode.leftChild != null) {
+          queue.add(presentNode.leftChild);
+        }
+        if (presentNode.rightChild != null) {
+          queue.add(presentNode.rightChild);
+        }
+      }
+    }
+  }
+
+  public void delete() {
+    try {
+      root = null;
+    } finally {
+      System.gc();
     }
   }
 }
