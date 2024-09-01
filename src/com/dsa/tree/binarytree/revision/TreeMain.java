@@ -7,9 +7,15 @@ public class TreeMain {
     tree.insert(1);
     tree.insert(2);
     tree.insert(3);
-
-    tree.inOrder();
+    tree.preOrder();
+    System.out.println();
+    System.out.println("Post Order Iterative");
+    tree.postOrder();
+    System.out.println();
+    System.out.println("PostOrder Recursion");
+    tree.rPostOrder();
+    System.out.println("\nInOrder Recursion");
+    tree.rInOrder();
   }
-
 
 }
